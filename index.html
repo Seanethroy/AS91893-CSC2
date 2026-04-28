@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kusina Pilipina | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="index.html" class="logo">Kusina Pilipina</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Recipes Section - Now the first/main section -->
+  <section id="recipes">
+    <h2 class="section-title">Popular Filipino Dishes</h2>
+    
+    <div class="recipes-grid">
+      <div class="recipe-card" onclick="openModal('adobo')">
+        <img src="https://source.unsplash.com/600x400/?chicken-adobo" alt="Chicken Adobo">
+        <div class="recipe-info">
+          <h3>Chicken Adobo</h3>
+          <p class="tags">Signature • Savoury • One-Pot</p>
+          <p>The unofficial national dish — tender chicken braised in tangy garlic soy-vinegar sauce.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card" onclick="openModal('lumpia')">
+        <img src="https://source.unsplash.com/600x400/?lumpia" alt="Lumpia Shanghai">
+        <div class="recipe-info">
+          <h3>Lumpia Shanghai</h3>
+          <p class="tags">Appetizer • Crispy • Party Favourite</p>
+          <p>Golden fried spring rolls filled with seasoned pork and vegetables.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card" onclick="openModal('halohalo')">
+        <img src="https://source.unsplash.com/600x400/?halo-halo" alt="Halo-Halo">
+        <div class="recipe-info">
+          <h3>Halo-Halo</h3>
+          <p class="tags">Dessert • Refreshing • Iconic</p>
+          <p>A colourful shaved ice dessert loved by Filipinos worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
