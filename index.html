@@ -172,14 +172,14 @@
   </footer>
 
   <script>
-    // Scroll animations
+    // Scroll Animations
     function handleScrollAnimations() {
       const sections = document.querySelectorAll('section');
       const cards = document.querySelectorAll('.recipe-card');
 
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
+        if (rect.top < window.innerHeight * 0.75) {
           section.classList.add('visible');
         }
       });
@@ -187,12 +187,30 @@
       cards.forEach((card, index) => {
         const rect = card.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.85) {
-          setTimeout(() => card.classList.add('visible'), index * 180);
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 150);
         }
       });
     }
 
-    // Modal functions
+    // Strong Click Animation for Recipe Cards
+    function addCardClickAnimation() {
+      document.querySelectorAll('.recipe-card').forEach(card => {
+        card.addEventListener('mousedown', () => {
+          card.style.transition = 'transform 0.1s ease';
+          card.style.transform = 'scale(0.93)';
+        });
+        card.addEventListener('mouseup', () => {
+          card.style.transform = '';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+
+    // Modal Functions
     function openModal(dish) {
       const modal = document.getElementById(dish + '-modal');
       if (modal) {
@@ -205,17 +223,22 @@
       const modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.remove('show');
-        setTimeout(() => modal.style.display = 'none', 400);
+        setTimeout(() => modal.style.display = 'none', 300);
       }
     }
 
+    // Close modal when clicking outside
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal(modal.id);
       });
     });
 
-    window.addEventListener('load', handleScrollAnimations);
+    // Initialize everything
+    window.addEventListener('load', () => {
+      handleScrollAnimations();
+      addCardClickAnimation();
+    });
     window.addEventListener('scroll', handleScrollAnimations);
   </script>
 </body>
