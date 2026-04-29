@@ -187,9 +187,7 @@
       cards.forEach((card, index) => {
         const rect = card.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.85) {
-          setTimeout(() => {
-            card.classList.add('visible');
-          }, index * 180);
+          setTimeout(() => card.classList.add('visible'), index * 180);
         }
       });
     }
@@ -207,25 +205,19 @@
       const modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.remove('show');
-        setTimeout(() => {
-          modal.style.display = 'none';
-        }, 400);
+        setTimeout(() => modal.style.display = 'none', 400);
       }
     }
 
-    // Close modal when clicking outside
+    // Close modal when clicking outside content
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          closeModal(modal.id);
-        }
+        if (e.target === modal) closeModal(modal.id);
       });
     });
 
     // Initialize
-    window.addEventListener('load', () => {
-      handleScrollAnimations();
-    });
+    window.addEventListener('load', handleScrollAnimations);
     window.addEventListener('scroll', handleScrollAnimations);
   </script>
 </body>
