@@ -4,13 +4,9 @@
   --pandan: #4A7043;
   --cream: #FFF8F0;
   --light: #FAF4EB;
-  --text: #333;
-  --text-light: #555;
 }
 
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,10 +21,10 @@ html {
 body {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.7;
-  color: var(--text);
+  color: #333;
 }
 
-/* ====================== NAVIGATION ====================== */
+/* Navigation */
 .nav {
   position: fixed;
   top: 0;
@@ -38,7 +34,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   transition: all 0.4s ease;
 }
@@ -54,30 +50,28 @@ body {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 35px;
 }
 
 nav a {
   font-family: 'Quicksand', sans-serif;
   text-decoration: none;
-  color: var(--text);
+  color: #333;
   font-weight: 600;
-  font-size: 1.05rem;
   transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: var(--ube);
-  transform: translateY(-2px);
 }
 
-/* ====================== SECTIONS ====================== */
+/* Sections */
 section {
-  padding: 160px 6% 120px;     /* Increased top padding */
+  padding: 160px 6% 120px;
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
-  scroll-margin-top: 140px;    /* Important fix for smooth scrolling */
+  scroll-margin-top: 140px;
 }
 
 section.visible {
@@ -85,49 +79,13 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Recipes Section */
-#recipes {
-  background: linear-gradient(to bottom, var(--light), #f5ede0);
-  position: relative;
-}
-
-#recipes::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://source.unsplash.com/1600x900/?tropical,leaf,philippines') center/cover no-repeat;
-  opacity: 0.06;
-  z-index: 0;
-}
-
-/* Culture & About */
-#culture, #about {
-  background: white;
-}
-
-/* Titles */
-.section-title {
-  font-family: 'Amatic SC', cursive;
-  text-align: center;
-  font-size: 3.8rem;
-  color: var(--pandan);
-  margin-bottom: 90px;
-  position: relative;
-  z-index: 1;
-}
-
 /* Recipe Cards */
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 50px;
   max-width: 1320px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .recipe-card {
@@ -152,7 +110,7 @@ section.visible {
 
 .recipe-card img {
   width: 100%;
-  height: 260px;
+  height: 285px;
   object-fit: cover;
   transition: transform 0.7s ease;
 }
@@ -207,33 +165,10 @@ section.visible {
   max-width: 880px;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.18rem;
-  line-height: 1.85;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.22rem;
+  line-height: 1.9;
   color: #444;
-}
-
-.about-content p {
-  margin-bottom: 28px;
-}
-
-.about-content strong {
-  color: var(--pandan);
-}
-
-.about-highlight {
-  background: var(--cream);
-  padding: 45px 40px;
-  border-radius: 24px;
-  margin: 50px 0;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-.about-highlight h3 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 2.6rem;
-  color: var(--pandan);
-  margin-bottom: 18px;
 }
 
 /* Footer */
@@ -251,7 +186,7 @@ footer {
   font-weight: 500;
 }
 
-/* Modal */
+/* ====================== MODAL - SCROLLABLE ====================== */
 .modal {
   display: none;
   position: fixed;
@@ -266,6 +201,7 @@ footer {
 }
 
 .modal.show {
+  display: flex;
   opacity: 1;
 }
 
@@ -273,12 +209,14 @@ footer {
   background: white;
   max-width: 760px;
   width: 100%;
+  max-height: 92vh;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,0.35);
   transform: scale(0.9);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal.show .modal-content {
@@ -289,11 +227,10 @@ footer {
   position: absolute;
   top: 22px;
   right: 28px;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   cursor: pointer;
   color: #555;
   transition: color 0.3s;
-  z-index: 10;
 }
 
 .close:hover {
@@ -301,7 +238,10 @@ footer {
 }
 
 .modal-body {
-  padding: 30px 40px 40px;
+  padding: 30px 40px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-body img {
@@ -332,36 +272,19 @@ footer {
   line-height: 1.6;
 }
 
-/* ====================== RESPONSIVE DESIGN ====================== */
+/* Mobile */
 @media (max-width: 768px) {
-  .nav {
-    padding: 16px 5%;
-  }
-  
-  .logo {
-    font-size: 2.4rem;
-  }
-  
-  .section-title {
-    font-size: 3.2rem;
-    margin-bottom: 60px;
-  }
-  
   section {
     padding: 120px 5% 80px;
     scroll-margin-top: 110px;
   }
   
   .recipes-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
   }
   
   .recipe-card img {
-    height: 220px;
-  }
-  
-  .recipe-info {
-    padding: 28px 20px;
+    height: 240px;
   }
 }

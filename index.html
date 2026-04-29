@@ -209,14 +209,12 @@
       }
     }
 
-    // Close modal when clicking outside content
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal(modal.id);
       });
     });
 
-    // Initialize
     window.addEventListener('load', handleScrollAnimations);
     window.addEventListener('scroll', handleScrollAnimations);
   </script>
