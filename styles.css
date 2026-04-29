@@ -1,8 +1,9 @@
 :root {
-  --green: #3A5F3E;
-  --purple: #9B59B6;
-  --beige: #F8F4ED;
-  --light: #FAF7F2;
+  --mango: #FF9F1C;
+  --ube: #9B59B6;
+  --pandan: #4A7043;
+  --cream: #FFF8F0;
+  --light: #FAF4EB;
 }
 
 * {
@@ -23,14 +24,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   z-index: 1000;
 }
 
 .logo {
   font-family: 'Amatic SC', cursive;
-  font-size: 2.4rem;
-  color: var(--green);
+  font-size: 2.5rem;
+  color: var(--mango);
   font-weight: 700;
   text-decoration: none;
 }
@@ -50,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--purple);
+  color: var(--ube);
 }
 
 /* Sections */
@@ -58,25 +59,24 @@ section {
   padding: 130px 6% 110px;
 }
 
-/* Section Title */
 .section-title {
   font-family: 'Amatic SC', cursive;
   text-align: center;
-  font-size: 3.4rem;
-  color: var(--green);
+  font-size: 3.5rem;
+  color: var(--pandan);
   margin-bottom: 90px;
 }
 
 /* Recipes Section */
 #recipes {
-  background: var(--beige);
+  background: var(--light);
 }
 
 .recipes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 45px;
-  max-width: 1300px;
+  gap: 50px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -84,18 +84,18 @@ section {
   background: white;
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
   transition: all 0.4s ease;
 }
 
 .recipe-card:hover {
-  transform: translateY(-18px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  transform: translateY(-20px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.18);
 }
 
 .recipe-card img {
   width: 100%;
-  height: 280px;
+  height: 285px;
   object-fit: cover;
 }
 
@@ -106,13 +106,13 @@ section {
 
 .recipe-info h3 {
   font-family: 'Quicksand', sans-serif;
-  color: var(--green);
+  color: var(--pandan);
   margin-bottom: 12px;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 
 .tags {
-  color: var(--purple);
+  color: var(--ube);
   font-size: 0.98rem;
   margin-bottom: 16px;
   font-weight: 500;
@@ -127,48 +127,49 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 45px;
-  max-width: 1150px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
 .culture-card {
-  background: white;
-  padding: 40px 32px;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  background: #fdf9f2;
+  padding: 42px 34px;
+  border-radius: 26px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
   text-align: center;
 }
 
 .culture-card h3 {
   font-family: 'Amatic SC', cursive;
-  color: var(--green);
-  font-size: 2rem;
+  color: var(--mango);
+  font-size: 2.1rem;
   margin-bottom: 20px;
 }
 
 /* About Content */
 .about-content {
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto;
   text-align: center;
   font-family: 'Work Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   line-height: 1.9;
   color: #444;
 }
 
 /* Footer */
 footer {
-  background: #2c2c2c;
-  color: #ddd;
+  background: #222;
+  color: #eee;
   text-align: center;
   padding: 90px 20px 50px;
 }
 
 .footer-links a {
-  color: var(--purple);
+  color: var(--mango);
   margin: 0 22px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .footer-links a:hover {
@@ -180,7 +181,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.78);
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -218,6 +219,6 @@ footer {
 }
 
 .modal-body h3 {
-  color: var(--green);
+  color: var(--pandan);
   margin: 30px 0 16px;
 }
