@@ -79,6 +79,7 @@ section {
   transform: translateY(60px);
   transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
   position: relative;
+  scroll-margin-top: 110px;     /* Fix for navbar overlap when scrolling */
 }
 
 section.visible {
@@ -104,14 +105,9 @@ section.visible {
   z-index: 0;
 }
 
-/* Culture Section */
-#culture {
+/* Culture & About */
+#culture, #about {
   background: white;
-}
-
-/* About Section */
-#about {
-  background: var(--light);
 }
 
 /* Titles */
@@ -125,11 +121,11 @@ section.visible {
   z-index: 1;
 }
 
-/* Recipe Cards */
+/* Recipe Cards - Improved Responsiveness */
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
   max-width: 1320px;
   margin: 0 auto;
   position: relative;
@@ -158,7 +154,7 @@ section.visible {
 
 .recipe-card img {
   width: 100%;
-  height: 285px;
+  height: 260px;
   object-fit: cover;
   transition: transform 0.7s ease;
 }
@@ -306,7 +302,6 @@ footer {
   color: var(--ube);
 }
 
-/* Modal Body */
 .modal-body {
   padding: 20px 40px 40px;
 }
@@ -333,3 +328,31 @@ footer {
   margin-bottom: 10px;
   line-height: 1.6;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav {
+    padding: 16px 5%;
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+  }
+  
+  .section-title {
+    font-size: 3.2rem;
+    margin-bottom: 60px;
+  }
+  
+  section {
+    padding: 110px 5% 80px;
+  }
+  
+  .recipes-grid {
+    gap: 30px;
+  }
+  
+  .recipe-card img {
+    height: 220px;
+  }
+} 
