@@ -4,9 +4,13 @@
   --pandan: #4A7043;
   --cream: #FFF8F0;
   --light: #FAF4EB;
+  --text: #333;
+  --text-light: #555;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +22,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+body {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ====================== NAVIGATION ====================== */
 .nav {
   position: fixed;
   top: 0;
@@ -28,43 +38,47 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   transition: all 0.4s ease;
 }
 
 .logo {
   font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--mango);
   font-weight: 700;
   text-decoration: none;
+  letter-spacing: -1px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 40px;
 }
 
 nav a {
   font-family: 'Quicksand', sans-serif;
   text-decoration: none;
-  color: #333;
+  color: var(--text);
   font-weight: 600;
+  font-size: 1.05rem;
   transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: var(--ube);
+  transform: translateY(-2px);
 }
 
-/* Sections */
+/* ====================== SECTIONS ====================== */
 section {
   padding: 140px 6% 120px;
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
 }
 
 section.visible {
@@ -72,7 +86,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Recipes Section with subtle background */
+/* Recipes Section */
 #recipes {
   background: linear-gradient(to bottom, var(--light), #f5ede0);
   position: relative;
@@ -95,11 +109,16 @@ section.visible {
   background: white;
 }
 
+/* About Section */
+#about {
+  background: var(--light);
+}
+
 /* Titles */
 .section-title {
   font-family: 'Amatic SC', cursive;
   text-align: center;
-  font-size: 3.6rem;
+  font-size: 3.8rem;
   color: var(--pandan);
   margin-bottom: 90px;
   position: relative;
@@ -189,15 +208,38 @@ section.visible {
   transform: translateY(-12px);
 }
 
-/* About */
+/* About Content */
 .about-content {
   max-width: 880px;
   margin: 0 auto;
   text-align: center;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.22rem;
-  line-height: 1.9;
+  font-size: 1.18rem;
+  line-height: 1.85;
   color: #444;
+}
+
+.about-content p {
+  margin-bottom: 28px;
+}
+
+.about-content strong {
+  color: var(--pandan);
+}
+
+.about-highlight {
+  background: var(--cream);
+  padding: 45px 40px;
+  border-radius: 24px;
+  margin: 50px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.about-highlight h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.6rem;
+  color: var(--pandan);
+  margin-bottom: 18px;
 }
 
 /* Footer */
@@ -242,6 +284,7 @@ footer {
   box-shadow: 0 30px 80px rgba(0,0,0,0.35);
   transform: scale(0.9);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
 }
 
 .modal.show .modal-content {
@@ -252,12 +295,41 @@ footer {
   position: absolute;
   top: 22px;
   right: 28px;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   cursor: pointer;
   color: #555;
   transition: color 0.3s;
+  z-index: 10;
 }
 
 .close:hover {
   color: var(--ube);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px 40px 40px;
+}
+
+.modal-body img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.modal-body h3 {
+  color: var(--pandan);
+  margin: 25px 0 15px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.modal-body ul, .modal-body ol {
+  text-align: left;
+  max-width: 620px;
+  margin: 0 auto 20px;
+}
+
+.modal-body li {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }

@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Kusina Pilipinas</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Quicksand:wght@500;600&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!-- Navigation -->
   <div class="nav">
     <a href="index.html" class="logo">Kusina Pilipinas</a>
     <nav>
@@ -20,16 +19,27 @@
     </nav>
   </div>
 
-  <section>
-    <h2 class="section-title">The Heart of Filipino Cuisine</h2>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">Our Story</h2>
+    
     <div class="about-content">
-      <p>Filipino food is more than just delicious meals. It carries the warmth of family the joy of celebration and the rich history of our islands.</p>
-      <p>Our cuisine is a beautiful blend of Malay Chinese Spanish and American influences. From the iconic Adobo to the festive Halo Halo every dish tells a story of resilience creativity and bayanihan community spirit.</p>
-      <p>Whether you are a Filipino living overseas craving the taste of home a student learning to cook or simply a food lover exploring new cultures Kusina Pilipinas is here to help you recreate authentic Filipino dishes with ease and pride.</p>
-      <p><strong>Food connects us. Lets keep our culinary heritage alive one recipe at a time.</strong></p>
+      <p>Filipino food is more than just delicious meals, it is love served on a plate. It carries the warmth of family gatherings, the joy of fiestas, and the rich history of our beautiful 7,641 islands.</p>
+      
+      <p>At <strong>Kusina Pilipinas</strong>, we celebrate the heart and soul of authentic Filipino cuisine. Our goal is to preserve traditional recipes and make them easy for both overseas Filipinos and international food lovers to recreate at home.</p>
+
+      <p>Our food is a beautiful fusion of Malay, Chinese, Spanish, and American influences, resulting in the uniquely Pinoy flavors we all cherish. From the iconic <strong>Chicken Adobo</strong> to the festive <strong>Halo-Halo</strong>, every dish tells a story of resilience, creativity, and <em>bayanihan</em>.</p>
+
+      <div class="about-highlight">
+        <h3>Why We Cook</h3>
+        <p>Whether you're craving the taste of home, teaching your kids how to cook Filipino dishes, or simply exploring new cultures through food, we’re here to help you bring the warmth of Kusina Pilipinas to your table.</p>
+      </div>
+
+      <p><strong>Food connects us. Let’s keep our culinary heritage alive, one recipe at a time.</strong></p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <a href="index.html" class="logo" style="color:white; font-size:2.3rem;">Kusina Pilipinas</a>
     <p style="margin:25px 0;">Bringing the taste of home to your kitchen</p>
@@ -41,5 +51,19 @@
     <p>&copy; 2026 Kusina Pilipinas</p>
   </footer>
 
+  <script>
+    function handleScrollAnimations() {
+      const section = document.querySelector('section');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          section.classList.add('visible');
+        }
+      }
+    }
+
+    window.addEventListener('load', handleScrollAnimations);
+    window.addEventListener('scroll', handleScrollAnimations);
+  </script>
 </body>
 </html>
