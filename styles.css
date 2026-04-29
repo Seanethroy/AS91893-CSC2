@@ -57,27 +57,51 @@ nav a:hover {
 /* Sections */
 section {
   padding: 130px 6% 110px;
+  position: relative;
 }
 
+/* Recipes Section with subtle background cover */
+#recipes {
+  background: linear-gradient(to bottom, var(--light), #f5ede0);
+}
+
+#recipes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://source.unsplash.com/1600x900/?philippine,pattern,leaf') center/cover no-repeat;
+  opacity: 0.06;
+  z-index: 0;
+}
+
+/* Culture Section */
+#culture {
+  background: white;
+}
+
+/* Section Title */
 .section-title {
   font-family: 'Amatic SC', cursive;
   text-align: center;
   font-size: 3.5rem;
   color: var(--pandan);
   margin-bottom: 90px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Recipes Section */
-#recipes {
-  background: var(--light);
-}
-
+/* Recipes Grid */
 .recipes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 50px;
   max-width: 1320px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .recipe-card {
@@ -118,11 +142,7 @@ section {
   font-weight: 500;
 }
 
-/* Culture Section */
-#culture {
-  background: white;
-}
-
+/* Culture Grid */
 .culture-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
