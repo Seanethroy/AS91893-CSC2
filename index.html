@@ -179,19 +179,56 @@
   </footer>
 
   <script>
+    // Scroll animations
+    function handleScrollAnimations() {
+      const sections = document.querySelectorAll('section');
+      const cards = document.querySelectorAll('.recipe-card');
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          section.classList.add('visible');
+        }
+      });
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 180);
+        }
+      });
+    }
+
+    // Modal functions
     function openModal(dish) {
-      document.getElementById(dish + '-modal').style.display = 'flex';
+      const modal = document.getElementById(dish + '-modal');
+      modal.style.display = 'flex';
+      setTimeout(() => modal.classList.add('show'), 10);
     }
 
     function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 400);
     }
 
+    // Event listeners
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', function(e) {
-        if (e.target === modal) modal.style.display = 'none';
+        if (e.target === modal) closeModal(modal.id);
       });
     });
+
+    // Initialize
+    window.addEventListener('load', () => {
+      handleScrollAnimations();
+    });
+
+    window.addEventListener('scroll', handleScrollAnimations);
   </script>
 </body>
 </html>
