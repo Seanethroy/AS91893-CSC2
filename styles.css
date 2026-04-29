@@ -1,7 +1,7 @@
 :root {
-  --orange: #FF9F1C;
-  --blue: #0077B6;
-  --cream: #FFF8F0;
+  --green: #4A7043;        /* Pandan Green */
+  --purple: #9B59B6;       /* Ube Purple */
+  --beige: #F5F0E6;        /* Warm Beige background */
   --light: #FAF6F0;
 }
 
@@ -11,9 +11,12 @@
   box-sizing: border-box;
 }
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Quicksand:wght@500;600&family=Work+Sans:wght@400;500&display=swap');
+
 /* Responsive */
 @media (max-width: 768px) {
-  .section-title { font-size: 2.3rem; }
+  .section-title { font-size: 2.6rem; }
   nav ul { gap: 20px; }
 }
 
@@ -32,8 +35,9 @@
 }
 
 .logo {
-  font-size: 1.85rem;
-  color: var(--orange);
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.2rem;
+  color: var(--green);
   font-weight: 700;
   text-decoration: none;
 }
@@ -45,14 +49,15 @@ nav ul {
 }
 
 nav a {
+  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: var(--orange);
+  color: var(--purple);
 }
 
 /* Sections */
@@ -60,18 +65,17 @@ section {
   padding: 120px 6% 100px;
 }
 
-/* Section Titles */
 .section-title {
+  font-family: 'Amatic SC', cursive;
   text-align: center;
-  font-size: 2.8rem;
-  color: var(--orange);
+  font-size: 3.2rem;
+  color: var(--green);
   margin-bottom: 80px;
-  font-weight: 700;
 }
 
 /* Recipes Section */
 #recipes {
-  background: var(--light);
+  background: var(--beige);
 }
 
 .recipes-grid {
@@ -84,9 +88,9 @@ section {
 
 .recipe-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
 }
 
@@ -107,12 +111,14 @@ section {
 }
 
 .recipe-info h3 {
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 10px;
   font-size: 1.45rem;
+  color: var(--green);
 }
 
 .tags {
-  color: var(--blue);
+  color: var(--purple);
   font-size: 0.95rem;
   margin-bottom: 14px;
 }
@@ -133,15 +139,16 @@ section {
 .culture-card {
   background: #fdfaf5;
   padding: 35px 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
 .culture-card h3 {
-  color: var(--orange);
+  font-family: 'Amatic SC', cursive;
+  color: var(--green);
   margin-bottom: 18px;
-  font-size: 1.55rem;
+  font-size: 1.8rem;
 }
 
 /* About Content */
@@ -149,6 +156,7 @@ section {
   max-width: 850px;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.18rem;
   line-height: 1.85;
   color: #444;
@@ -156,14 +164,14 @@ section {
 
 /* Footer */
 footer {
-  background: #1f1f1f;
+  background: #2c2c2c;
   color: #ddd;
   text-align: center;
   padding: 80px 20px 40px;
 }
 
 .footer-links a {
-  color: var(--orange);
+  color: var(--purple);
   margin: 0 20px;
   text-decoration: none;
   font-weight: 500;
@@ -178,7 +186,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.78);
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -198,7 +206,7 @@ footer {
   position: absolute;
   top: 20px;
   right: 25px;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   cursor: pointer;
   color: #666;
 }
@@ -216,6 +224,7 @@ footer {
 }
 
 .modal-body h3 {
-  color: var(--orange);
+  color: var(--green);
   margin: 28px 0 14px;
+  font-family: 'Quicksand', sans-serif;
 }
